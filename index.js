@@ -65,6 +65,14 @@ optionImages.forEach((image, index) => {
       // Look up the outcome value based on user and CPU options
       let outComeValue = outcomes[userValue + cpuValue];
 
+       // Update the scoreboard based on the result
+      if (userValue !== cpuValue) {
+        outComeValue === "User" ? userScore++ : cpuScore++;
+        localStorage.setItem("userScore", userScore);
+        localStorage.setItem("cpuScore", cpuScore);
+        updateScoreboard(userScore, cpuScore);
+      }
+
       // Display the result
       result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!!`;
 
