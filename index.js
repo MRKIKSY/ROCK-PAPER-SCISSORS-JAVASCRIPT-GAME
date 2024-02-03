@@ -40,7 +40,7 @@ optionImages.forEach((image, index) => {
       // Generate a random number between 0 and 2
       let randomNumber = Math.floor(Math.random() * 3);
       // Create an array of CPU image options
-      let cpuImages = ["rock.png", "scissors.png", "paper.png"];
+      let cpuImages = ["rock.png", "paper.png", "scissors.png"];
       // Set the CPU image to a random option from the array
       cpuResult.src = cpuImages[randomNumber];
 
