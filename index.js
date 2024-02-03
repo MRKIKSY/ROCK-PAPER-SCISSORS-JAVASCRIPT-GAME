@@ -1,4 +1,3 @@
-
 // Get DOM elements
 const gameContainer = document.querySelector(".container"),
   userResult = document.querySelector(".user_result img"),
@@ -14,7 +13,7 @@ function resetGame() {
   });
 
   // Set default images and result text
-  userResult.src = cpuResult.src = "rock.png";
+  userResult.src = cpuResult.src = "images/rock.png";
   result.textContent = "Wait...";
 }
 
@@ -41,7 +40,7 @@ optionImages.forEach((image, index) => {
       // Generate a random number between 0 and 2
       let randomNumber = Math.floor(Math.random() * 3);
       // Create an array of CPU image options
-      let cpuImages = ["rock.png", "paper.png", "scissors.png"];
+      let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
       // Set the CPU image to a random option from the array
       cpuResult.src = cpuImages[randomNumber];
 
@@ -52,21 +51,20 @@ optionImages.forEach((image, index) => {
 
       // Create an object with all possible outcomes
       let outcomes = {
-          RR: "Draw",
-        RP: "MR KIKSY",
-        RS: " CONGRATS YOU",
+        RR: "Draw",
+        RP: "Cpu",
+        RS: "User",
         PP: "Draw",
-        PR: " CONGRATS YOU",
-        PS: "MR KIKSY",
+        PR: "User",
+        PS: "Cpu",
         SS: "Draw",
-        SR: "MR KIKSY",
-        SP: " CONGRATS YOU",
+        SR: "Cpu",
+        SP: "User",
       };
 
       // Look up the outcome value based on user and CPU options
       let outComeValue = outcomes[userValue + cpuValue];
 
-       
       // Display the result
       result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!!`;
 
