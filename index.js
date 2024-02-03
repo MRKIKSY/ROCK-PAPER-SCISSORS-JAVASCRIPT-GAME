@@ -64,12 +64,3 @@ optionImages.forEach((image, index) => {
     }, 2500);
   });
 });
-
-const Footer  =() => {
-  const today = newDate();
-  return (
-    <Footer>
-      <p> Copyright & Copy; {today.getFullyear()}</p>
-    </Footer>
-  )
-}
