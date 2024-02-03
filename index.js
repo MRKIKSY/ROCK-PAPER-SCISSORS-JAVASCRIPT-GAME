@@ -45,15 +45,15 @@ optionImages.forEach((image, index) => {
 
       // Create an object with all possible outcomes
       let outcomes = {
-        RR: "Draw",
-        RP: "Cpu",
-        RS: "User",
-        PP: "Draw",
-        PR: "User",
-        PS: "Cpu",
-        SS: "Draw",
-        SR: "Cpu",
-        SP: "User",
+        RR: "DRAW",
+        RP: "CPU",
+        RS: "YOU",
+        PP: "DRAW",
+        PR: "YOU",
+        PS: "CPU",
+        SS: "DRAW",
+        SR: "CPU",
+        SP: "YOU",
       };
 
       // Look up the outcome value based on user and CPU options
