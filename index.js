@@ -13,9 +13,20 @@ function resetGame() {
   });
 
   // Set default images and result text
-  userResult.src = cpuResult.src = "rock.png";
+  userResult.src = cpuResult.src = "images/rock.png";
   result.textContent = "Wait...";
 }
+
+// Function to update and display the scoreboard
+function updateScoreboard(userScore, cpuScore) {
+  const scoreboard = document.querySelector(".scoreboard");
+  scoreboard.textContent = `User: ${userScore} - CPU: ${cpuScore}`;
+}
+
+// Check if there is a scoreboard in local storage, if not initialize it
+let userScore = localStorage.getItem("userScore") || 0;
+let cpuScore = localStorage.getItem("cpuScore") || 0;
+updateScoreboard(userScore, cpuScore);
 
 // Loop through each option image element
 optionImages.forEach((image, index) => {
@@ -40,7 +51,7 @@ optionImages.forEach((image, index) => {
       // Generate a random number between 0 and 2
       let randomNumber = Math.floor(Math.random() * 3);
       // Create an array of CPU image options
-      let cpuImages = ["rock.png", "paper.png", "scissors.png"];
+      let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
       // Set the CPU image to a random option from the array
       cpuResult.src = cpuImages[randomNumber];
 
@@ -51,21 +62,28 @@ optionImages.forEach((image, index) => {
 
       // Create an object with all possible outcomes
       let outcomes = {
-          RR: "Draw",
-        RP: "MR KIKSY",
-        RS: " CONGRATS YOU",
+        RR: "Draw",
+        RP: "Cpu",
+        RS: "User",
         PP: "Draw",
-        PR: " CONGRATS YOU",
-        PS: "MR KIKSY",
+        PR: "User",
+        PS: "Cpu",
         SS: "Draw",
-        SR: "MR KIKSY",
-        SP: " CONGRATS YOU",
+        SR: "Cpu",
+        SP: "User",
       };
 
       // Look up the outcome value based on user and CPU options
       let outComeValue = outcomes[userValue + cpuValue];
 
-       
+      // Update the scoreboard based on the result
+      if (userValue !== cpuValue) {
+        outComeValue === "User" ? userScore++ : cpuScore++;
+        localStorage.setItem("userScore", userScore);
+        localStorage.setItem("cpuScore", cpuScore);
+        updateScoreboard(userScore, cpuScore);
+      }
+
       // Display the result
       result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!!`;
 
