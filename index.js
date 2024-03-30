@@ -53,13 +53,13 @@ optionImages.forEach((image, index) => {
       let outcomes = {
         RR: "Draw",
         RP: "SORRY SAM  WON ",
-        RS: "CONGRATS MILAN WON ",
+        RS: "CONGRATS MILAN  ",
         PP: "Draw",
-        PR: "CONGRATS MILAN WON  ",
+        PR: "CONGRATS MILAN   ",
         PS: "SORRY SAM WON  ",
         SS: "Draw",
         SR: "SORRY SAM WON  ",
-        SP: "CONGRATS MILAN  WON  ",
+        SP: "CONGRATS MILAN   ",
       };
 
       // Look up the outcome value based on user and CPU options
