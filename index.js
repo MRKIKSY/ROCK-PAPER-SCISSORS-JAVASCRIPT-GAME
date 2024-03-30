@@ -52,14 +52,14 @@ optionImages.forEach((image, index) => {
       // Create an object with all possible outcomes
       let outcomes = {
         RR: "Draw",
-        RP: "MR KIKSY ",
-        RS: "CONGRATS YOU ",
+        RP: "SORRY SAM  WON ",
+        RS: "CONGRATS MILAN WON ",
         PP: "Draw",
-        PR: "CONGRATS YOU  ",
-        PS: "OLODO MR KIKSY  ",
+        PR: "CONGRATS MILAN WON  ",
+        PS: "SORRY SAM WON  ",
         SS: "Draw",
-        SR: "OLODO MR KIKSY ",
-        SP: "CONGRATS YOU ",
+        SR: "SORRY SAM WON  ",
+        SP: "CONGRATS MILAN  WON  ",
       };
 
       // Look up the outcome value based on user and CPU options
